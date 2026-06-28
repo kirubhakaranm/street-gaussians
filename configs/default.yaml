@@ -1,0 +1,28 @@
+data:
+  source: kitti
+  root: data/kitti/tracking/training
+  sequence: "0001"
+  test_every: 8
+  max_bg_points: 200000
+  max_object_points: 10000
+  min_object_points: 50
+
+training:
+  iterations: 50000
+  sh_degree: 3
+  lr_position_init: 0.00016
+  lr_position_final: 0.0000016
+  lr_scale: 0.005
+  lr_quaternion: 0.001
+  lr_opacity: 0.05
+  lr_sh: 0.0025
+  lambda_ssim: 0.2
+  densify_interval: 100
+  grad_threshold: 5.0e-7
+  opacity_prune_threshold: 0.005
+  opacity_reset_interval: 3000
+  checkpoint_interval: 10000
+
+output:
+  dir: output/
+  progression_interval: 500

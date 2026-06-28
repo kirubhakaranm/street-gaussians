@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "street-gaussians"
+version = "0.1.0"
+description = "Dynamic 3D Gaussian Splatting for street scenes with per-object decomposition."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Kirubhakaran"}]
+
+dependencies = [
+    "torch>=2.1.0",
+    "gsplat>=1.0.0",
+    "numpy>=1.24.0",
+    "pillow>=10.0.0",
+    "pyyaml>=6.0",
+    "matplotlib>=3.7.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.4.0"]
+eval = ["lpips>=0.1.4"]
+logging = ["tensorboard>=2.14"]
+
+[tool.setuptools.packages.find]
+include = ["street_gaussians*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

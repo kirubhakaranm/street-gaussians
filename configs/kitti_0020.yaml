@@ -1,0 +1,10 @@
+data:
+  source: kitti
+  root: /workspace/data/kitti/tracking/training
+  sequence: "0020"
+
+training:
+  iterations: 30000
+
+output:
+  dir: output/kitti_0020/

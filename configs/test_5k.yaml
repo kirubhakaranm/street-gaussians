@@ -1,0 +1,17 @@
+data:
+  source: kitti
+  root: data/kitti/tracking/training
+  sequence: "0001"
+  test_every: 8
+  max_bg_points: 100000
+  max_object_points: 5000
+  min_object_points: 50
+
+training:
+  iterations: 5000
+  sh_degree: 2
+  checkpoint_interval: 2500
+
+output:
+  dir: output/test_5k/
+  progression_interval: 500
